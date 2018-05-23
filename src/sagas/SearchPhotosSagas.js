@@ -1,7 +1,7 @@
 import { call, put , takeEvery} from 'redux-saga/effects';
 import axios from 'axios';
 import * as actionTypes from '../const/ActionTypes';
-import * as API from '../const/api';
+import * as API from '../const/Api';
 
 
 // Worker sagas//
