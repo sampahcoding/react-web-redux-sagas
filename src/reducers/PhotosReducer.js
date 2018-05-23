@@ -2,18 +2,17 @@ import * as actionTypes from '../const/ActionTypes';
 
 function result(state, action) {
   if (action.infinite === true) {
-    return state.photos.concat(action.response)
+    return state.datas.concat(action.response)
   }
   return action.response
 }
 
-export default function Photos(state = { photos: [] }, action) {
+export default function Photos(state = { datas: [] }, action) {
   switch (action.type) {
     case actionTypes.GET_PHOTOS:
       return { ...state, loading: true };
     case actionTypes.GET_PHOTOS_SUCCESS:
-      var m = result(state, action)
-      return { ...state, loading: false, photos: m };
+      return { ...state, loading: false, datas: result(state, action) };
     case actionTypes.GET_PHOTOS_FAIL:
       return {
         ...state,

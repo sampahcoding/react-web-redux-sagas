@@ -35,8 +35,8 @@ class PageTwo extends Component {
 
 const mapStateToProps = state => {
   let storedPhotos = [];
-  if (state.photos.photos.length > 0) {
-    storedPhotos = state.photos.photos.map(photo => ({ key: photo.id, ...photo }));
+  if (state.photos.datas.length > 0) {
+    storedPhotos = state.photos.datas.map(photo => ({ key: photo.id, ...photo }));
   }
   return {
     photos: storedPhotos,
