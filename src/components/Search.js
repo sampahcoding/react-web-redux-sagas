@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { listPhotos } from '../reducers/PhotosReducer';
 
-class PageTwo extends Component {
+class Search extends Component {
   constructor(props) {
    super(props);
    this.state = {
@@ -31,9 +31,13 @@ class PageTwo extends Component {
   }
 
   render() {
+    console.log(this.props);
+    const { search } = this.props.location;
+    const params = new URLSearchParams(search);
+    const page = params.get('page'); // bar
     return (
-      <div>
-        page number: {this.props.match.params.number}
+      <div style={this.props.loading === true ? style.loading: style.loaded}>
+        page number: { page }
         <br/>
         <input type="text" id="q" name="q" onChange={ this.updateQ } value={this.state.q} />
         {this.props.photos.map(this.item)}
@@ -49,12 +53,19 @@ const mapStateToProps = state => {
   }
   return {
     photos: storedPhotos,
-    loading: true
+    loading: state.photos.loading
   };
+};
+
+const style = {
+  loading: {
+    opacity: 0.2,
+    background: "white"
+  }
 };
 
 const mapDispatchToProps = {
   listPhotos
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageTwo);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
