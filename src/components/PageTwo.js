@@ -13,20 +13,29 @@ class PageTwo extends Component {
        infinite: false
      }
    };
+   this.updateQ = this.updateQ.bind(this);
   }
 
   componentDidMount() {
     this.props.listPhotos(this.state.params);
+
+  }
+
+  updateQ(e) {
+    this.setState({params: { q: e.target.value }});
+    this.props.listPhotos(this.state.params);
   }
 
   item(data, index) {
-    return <p key={index}>asdalskds</p>;
+    return <p key={index}>{data.title}</p>;
   }
 
   render() {
     return (
       <div>
         page number: {this.props.match.params.number}
+        <br/>
+        <input type="text" id="q" name="q" onChange={ this.updateQ } value={this.state.q} />
         {this.props.photos.map(this.item)}
       </div>
     );
