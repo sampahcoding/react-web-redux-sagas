@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { listPhotos } from '../reducers/PhotosReducer';
+import TextInput from './forms/TextInput';
+import {debounce} from 'lodash';
 
 class Search extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class Search extends Component {
      }
    };
    this.updateQ = this.updateQ.bind(this);
+   this.requestData = debounce(this.requestData,1000);
   }
 
   componentDidMount() {
@@ -21,9 +24,13 @@ class Search extends Component {
 
   }
 
-  updateQ(e) {
-    this.setState({params: { q: e.target.value }});
+  requestData() {
     this.props.listPhotos(this.state.params);
+  }
+
+  updateQ(e) {
+    this.setState({params: { q: e.q }});
+    this.requestData();
   }
 
   item(data, index) {
@@ -31,7 +38,6 @@ class Search extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { search } = this.props.location;
     const params = new URLSearchParams(search);
     const page = params.get('page'); // bar
@@ -39,7 +45,7 @@ class Search extends Component {
       <div style={this.props.loading === true ? style.loading: style.loaded}>
         page number: { page }
         <br/>
-        <input type="text" id="q" name="q" onChange={ this.updateQ } value={this.state.q} />
+        <TextInput id="q" name="q" onChange={ this.updateQ } value={this.state.q} />
         {this.props.photos.map(this.item)}
       </div>
     );

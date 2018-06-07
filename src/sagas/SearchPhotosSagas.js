@@ -1,4 +1,4 @@
-import { call, put , takeEvery} from 'redux-saga/effects';
+import { call, put , takeLatest} from 'redux-saga/effects';
 import axios from 'axios';
 import * as actionTypes from '../const/ActionTypes';
 import * as API from '../const/Api';
@@ -20,5 +20,5 @@ function* getListPhotos(action) {
 // Watcher sagas//
 export function* wacthGetListPhotos() {
   console.log("Redux saga is watching LOAD_PHOTOS action listener...");
-  yield takeEvery(actionTypes.GET_PHOTOS, getListPhotos);
+  yield takeLatest(actionTypes.GET_PHOTOS, getListPhotos);
 }
