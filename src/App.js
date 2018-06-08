@@ -15,7 +15,7 @@ class App extends Component {
         <div>
           <ul>
             <li><Link to="/">Homepage</Link></li>
-            <li><Link to="/search?page=1">Page Two</Link></li>
+            <li><Link to="/search">Search</Link></li>
           </ul>
           <Switch>
             <Route exact path="/" component={HomePage} />

@@ -1,0 +1,17 @@
+.pagination__box {
+  border-radius: 3px;
+  padding: 10px;
+  background: rgba(0, 173, 255, 1);
+  text-align: center;
+  cursor: pointer;
+  margin-right: 5px;
+  color: white;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.pagination__box:hover {
+  color: rgba(0, 173, 255, 1);
+  background: white;
+  border: solid 1px rgba(0, 173, 255, 1);
+}
