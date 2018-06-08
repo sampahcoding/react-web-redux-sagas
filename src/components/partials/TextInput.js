@@ -7,7 +7,7 @@ class TextInput extends Component {
 	}
 
 	onChange(e) {
-		var state = {};
+		let state = {};
 		state[this.props.name] = e.target.value;
 		this.props.onChange(state);
 	}

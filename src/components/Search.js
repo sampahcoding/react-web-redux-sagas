@@ -31,14 +31,14 @@ class Search extends Component {
 		const { search } = this.props.location;
 		const params = new URLSearchParams(search);
 		Object.keys(url_params).map(function (key) {
-			var p = params.get(key);
+			let p = params.get(key);
 			return url_params[key] = p ? p : "";
 		});
 		return url_params;
 	}
 
 	requestData() {
-		const searchString = qs.stringify(this.state.params);
+		let searchString = qs.stringify(this.state.params);
 		this.props.history.push("search?" + searchString);
 		this.props.listPhotos(this.state.params);
 	}
