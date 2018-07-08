@@ -1,7 +1,7 @@
 version: '3'
 
 volumes:
-  reactwebserver:
+  web:
     driver: local
 
 services:
@@ -9,7 +9,7 @@ services:
 #   Setup node container
 ################################
   server:
-    image: node:6.9.5-alpine
+    image: node:8.0.0
     ports:
       - 3000:3000
     #environment:
@@ -18,9 +18,9 @@ services:
       - .:/reactweb
     stdin_open: true
     tty: true
-    command: " /bin/sh -c 'cd /reactweb && npm start'"
+    command: "/bin/sh -c 'cd /reactweb && npm start'"
   bash:
-    image: node:6.9.5-alpine
+    image: node:8.0.0
     volumes:
       - .:/reactweb
     stdin_open: true
