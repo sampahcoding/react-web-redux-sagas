@@ -1,0 +1,9 @@
+- download docker
+  - `docker ps` [all active containers]
+  - `docker ps -a` [all containers]
+  - `docker images` [ all active images]
+  - `docker images -a` [ all images]
+    - remove <none><none> dandling images listed in docker images (without -a)with: `docker rmi $(docker images -f "dangling=true" -q)`
+- create Dockerfile [to create image, volume etc] `touch Dockerfile`
+- install with `docker build .` inside script or
+  - `docker build -f script/Dockerfile .` in root

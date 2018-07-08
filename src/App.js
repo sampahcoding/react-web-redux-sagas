@@ -10,7 +10,7 @@ class App extends Component {
 				<div>
 					<ul>
 						<li><Link to="/">Homepage</Link></li>
-						<li><Link to="/search">Search</Link></li>
+						<li><Link to="/search">Searchpage</Link></li>
 					</ul>
 					<Switch>
 						<Route exact path="/" component={HomePage} />

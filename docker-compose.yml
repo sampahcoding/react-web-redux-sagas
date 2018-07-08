@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  reactwebserver:
+    driver: local
+
+services:
+################################
+#   Setup node container
+################################
+  server:
+    image: node:6.9.5-alpine
+    ports:
+      - 3000:3000
+    environment:
+      SERVER_NAME: "karir.loc"
+    volumes:
+      - .:/reactweb
+    stdin_open: true
+    tty: true
+    command: " /bin/sh -c 'cd /reactweb && npm start'"
+  bash:
+    image: node:6.9.5-alpine
+    volumes:
+      - .:/reactweb
+    stdin_open: true
+    tty: true
+    command: /bin/sh
