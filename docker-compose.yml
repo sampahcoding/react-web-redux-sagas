@@ -12,8 +12,8 @@ services:
     image: node:6.9.5-alpine
     ports:
       - 3000:3000
-    environment:
-      SERVER_NAME: "karir.loc"
+    #environment:
+      #SERVER_NAME: ""
     volumes:
       - .:/reactweb
     stdin_open: true
