@@ -1,4 +1,11 @@
-import * as actionTypes from "../const/ActionTypes";
+import * as actionTypes from "const/ActionTypes";
+
+const articles = {
+	datas: [],
+	progress: false,
+	reload: false,
+	no_result: false,
+	delay: 500 };
 
 function result(state, action) {
 	if (action.infinite === true) {
@@ -7,16 +14,21 @@ function result(state, action) {
 	return action.response;
 }
 
-export default function Photos(state = { datas: [] }, action) {
+export default function Photos(state = articles, action) {
+	if (action.infinite !== true) {
+		state = {...state, ...articles};
+	}
 	switch (action.type) {
 	case actionTypes.GET_PHOTOS:
-		return { ...state, loading: true };
+		return { ...state, progress: true };
 	case actionTypes.GET_PHOTOS_SUCCESS:
-		return { ...state, loading: false, datas: result(state, action) };
+		return { ...state, datas: result(state, action), delay: 1000, progress: false };
+	case actionTypes.GET_PHOTOS_NOT_FOUND:
+		return { ...state, datas: result(state, action), no_result: true};
 	case actionTypes.GET_PHOTOS_FAIL:
 		return {
 			...state,
-			loading: false,
+			reload: true,
 			error: "Error while fetching repositories"
 		};
 	default:

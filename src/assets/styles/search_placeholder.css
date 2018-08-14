@@ -1,0 +1,53 @@
+.placeholder .flex-grid {
+  display: flex;
+  margin-bottom: 15px;
+}
+.placeholder .col-1 {
+  width: 170px;
+  height: 100px;
+  background: lightgrey;
+}
+.placeholder .col-2 {
+  width: calc(100% - 170px);
+  padding-left: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+.placeholder .search-result__title {
+  background: lightgrey;
+  height: 20px;
+}
+.placeholder .search-filter {
+  width: 30%;
+}
+.placeholder .search-result {
+  width: 70%;
+  margin: 0;
+}
+.placeholder .search {
+  display: flex;
+}
+.placeholder span.label {
+  border: 1px solid #f4f6f9;
+  border-radius: 6px;
+  padding: 1px 10px;
+  background: #f4f6f9;
+  display: inline-block;
+  width: 50px;
+  height: 12px;
+  margin-top: 10px;
+}
+.placeholder time {
+  font-size: 10px;
+  width: 76px;
+  border-radius: 7px;
+  height: 15px;
+  display: inline-block;
+  background: lightgrey;
+}
+.placeholder .search-result__subcontent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 10px;
+}

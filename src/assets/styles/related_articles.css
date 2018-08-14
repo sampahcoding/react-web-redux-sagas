@@ -1,0 +1,23 @@
+.flex-3 {
+  display: flex;
+  list-style-type: none;
+  margin: 2em 0 0 0;
+  padding: 0;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.flex-3 li {
+  margin-right: 5%;
+  width: 30%;
+}
+.flex-3 li img {
+  width: 100%;
+  object-fit: contain;
+}
+.flex-3 li h5 {
+  height: 38px;
+  overflow: hidden;
+}
+.flex-3 li:last-of-type {
+  margin-right: 0;
+}

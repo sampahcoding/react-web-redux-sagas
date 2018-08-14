@@ -1,0 +1,55 @@
+.placeholder .h2 {
+  background: lightgrey;
+  height: 20px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px
+}
+.placeholder .h2.--short {
+  width: 20%;
+  margin-bottom: 30px;
+}
+.placeholder .p {
+  background: lightgrey;
+  height: 15px;
+  width: 100%;
+  margin-bottom: 7px;
+}
+.placeholder .p--short {
+  background: lightgrey;
+  height: 15px;
+  width: 80%;
+  margin-bottom: 15px;
+}
+.placeholder .gap {
+  margin-bottom: 20px;
+}
+.placeholder .detail__footer__img {
+   border-radius: 50%;
+   margin-right: 15px;
+   width: 50px;
+   height: 50px;
+   background: lightgrey;
+   display: inline-block;
+}
+.placeholder .detail__footer {
+  margin-top: 40px;
+  display: flex;
+}
+.placeholder span.label {
+  border-radius: 6px;
+  background: #f4f6f9;
+  width: 100px;
+  height: 25px;
+  display: inline-block;
+}
+.placeholder time {
+  background: lightgrey;
+  width: 70px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 6px;
+}
+.placeholder .detail__footer__left {
+  width: calc (100% - 50px);
+}

@@ -1,0 +1,38 @@
+h2 {
+  text-align: center;
+}
+p {
+  text-align: justify;
+}
+.detail__footer img {
+   border-radius: 50%;
+   margin-right: 15px;
+   width: 50px;
+   background: lightgrey;
+}
+.detail__footer {
+  margin-top: 40px;
+  display: flex;
+}
+span.label {
+  border: 1px solid #f4f6f9;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 5px 15px;
+  background: #f4f6f9;
+  color: #b1b6bb;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+time {
+  color: #99a4af;
+  font-size: 10px;
+}
+.detail__footer__left {
+  width: calc(100% - 50px);
+}
+.no-result {
+  font-size: 1em;
+  text-align: center;
+  margin: 200px auto;
+}

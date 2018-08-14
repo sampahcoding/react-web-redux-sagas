@@ -1,22 +1,26 @@
 import React, { Component } from "react";
-import HomePage from "./components/HomePage";
-import Search from "./components/Search";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import HomePage from "components/HomePage";
+import Search from "components/search/Search";
+import Article from "components/search/Article";
+import Nav from "components/Nav";
+import "assets/styles/header.css";
+import { Router, Route, Switch } from "react-router-dom";
+import createBrowserHistory from "history/createBrowserHistory";
+
+const history = createBrowserHistory();
 
 class App extends Component {
 	render() {
 		return (
-			<Router>
-				<div>
-					<ul>
-						<li><Link to="/">Homepage</Link></li>
-						<li><Link to="/search">Searchpage</Link></li>
-					</ul>
+			<Router history={history}>
+				<React.Fragment>
+					<Nav/>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route path="/search" component={Search} />
+						<Route path="/article/:id" component={Article}/>
 					</Switch>
-				</div>
+				</React.Fragment>
 			</Router>
 		);
 	}
