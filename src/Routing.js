@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import HomePage from "components/HomePage";
-import Search from "components/search/Search";
-import Article from "components/search/Article";
 import Nav from "components/Nav";
 import "assets/styles/header.css";
 import { Router, Route, Switch } from "react-router-dom";
 import createBrowserHistory from "history/createBrowserHistory";
+// asyncComponent
+import asyncComponent from "./components/AsyncComponent";
+const Search = asyncComponent(() => import("components/search/Search"));
+const Article = asyncComponent(() => import("components/search/Article"));
+const HomePage = asyncComponent(() => import("components/HomePage"));
 
 const history = createBrowserHistory();
 
-class App extends Component {
+class Routing extends Component {
 	render() {
 		return (
 			<Router history={history}>
@@ -26,4 +28,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default Routing;

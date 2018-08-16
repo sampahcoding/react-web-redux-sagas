@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "App";
+import Routing from "Routing";
 import registerServiceWorker from "registerServiceWorker";
 
 import { Provider } from "react-redux";
@@ -10,6 +10,6 @@ const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App/>
+		<Routing/>
 	</Provider>, document.getElementById("root"));
 registerServiceWorker();

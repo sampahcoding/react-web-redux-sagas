@@ -9,6 +9,9 @@
   object-fit: cover;
   z-index: 2;
 }
+img.col-1 {
+  color: lightgrey;
+}
 .no-img {
   background: lightgrey;
   position: absolute;

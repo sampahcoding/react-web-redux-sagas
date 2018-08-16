@@ -6,8 +6,8 @@ const Nav = () => (
 		<img src={require("assets/images/logo.png")} className="icon" alt="icon"/>
 		<div className="menus">
 			<ul className="list-menu">
-				<li><Link to="/">Homepage</Link></li>
-				<li><Link to="/search">Searchpage</Link></li>
+				<li><Link to="/">Home</Link></li>
+				<li><Link to="/search">Search</Link></li>
 			</ul>
 		</div>
 	</header>
